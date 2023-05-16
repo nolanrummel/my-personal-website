@@ -1,4 +1,13 @@
-const h2 = document.createElement("h2");
-h2.textContent = "This content added by JavaScript";
+var ball = document.getElementById('ball');
+var strikeZone = document.getElementById('strike-zone');
 
-document.querySelector("body").appendChild(h2);
+strikeZone.addEventListener('click', mouseClicked);
+
+function mouseClicked (event){
+  var xposition = (event.clientX - ball.offsetLeft - ball.offsetWidth/2);
+  var yposition = (event.clientY - ball.offsetTop - ball.offsetHeight/2);
+
+  ball.style.transform = "translate("+ xposition + "px," + yposition + "px)";
+  
+  console.log(event);
+}
