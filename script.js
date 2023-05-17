@@ -1,13 +1,58 @@
 var ball = document.getElementById('ball');
 var strikeZone = document.getElementById('strike-zone');
 
-strikeZone.addEventListener('click', mouseClicked);
+strikeZone.addEventListener('dblclick', throwPitch);
 
-function mouseClicked (event){
-  var xposition = (event.clientX - ball.offsetLeft - ball.offsetWidth/2);
-  var yposition = (event.clientY - ball.offsetTop - ball.offsetHeight/2);
+/*
+document.body.addEventListener('click', prepPitch);
 
-  ball.style.transform = "translate("+ xposition + "px," + yposition + "px)";
-  
-  console.log(event);
+function prepPitch (event){
+    newBall();
 }
+*/
+
+function throwPitch (event){
+    moveBall();
+}
+
+/*
+function newBall() {
+    var ball = document.querySelector('#ball');
+    var clone = ball.cloneNode(true);
+    clone.id = 'nextpitch';
+    clone.classList.add('visible');
+    ball.after(clone);
+}
+*/
+
+function moveBall() {
+    var xposition = (event.clientX);
+    var yposition = (event.clientY);
+
+    ball.style.position = "absolute";
+    ball.style.left = xposition + 'px';
+    ball.style.top = yposition + 'px';
+}
+
+
+
+/*
+    clone.ball.cloneNode(true);
+    clone.id = 'ball ${i}';
+    clone.classList.add('visibility')
+
+
+     /*$("#clonecontainer").html('');
+     for(var i=0; i >= 6; i++){
+        var cloner = $("#ball").clone();
+        $("#clonecontainer").append(cloner);
+  
+          clone.ball.cloneNode(true);
+          clone.id = 'ball ${i}';
+          clone.classList.add('visibility')
+
+function pitchCount() {
+    var pitchNumber = document.getElementsByClassName("visible");
+    return pitchNumber;
+}
+*/
