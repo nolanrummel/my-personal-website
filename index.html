@@ -4,13 +4,48 @@
 <head>
   <title>My Personal Website</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script defer type="text/javascript" src="index.js"></script>
 </head>
 <body>
-    <h1>THROW A PITCH!</h1>
-    <div id="strike-zone"></div>
-    <div id="ball"></div>
-    <p>Double Click to Move the Ball Around the Strike Zone</p>
-
-    <script type="text/javascript" src="script.js"></script>
+    <div id="scoreboard">
+        <h1 id="score">HOME : 0 - 0 : AWAY</h1>
+    </div>
+    <div>
+        <div id="strike-zone"></div>
+        <div id="pitch-container"></div>
+        <div id="pitchable-zone"></div>
+    </div>
+    <div id="inning-info">
+        <!-- <div id="home"></div> -->
+        <div id="third"></div>
+        <div id="second"></div>
+        <div id="first"></div>
+        <div id="out-container">
+            <div class="out"></div>
+            <div class="out"></div>
+            <div class="out" id="third-out"></div>
+        </div>
+        <div id="inning-conatiner">
+            <div id="top-inning"></div>
+            <div id="inning">
+                <h1 id="inning-count">1</h1>
+            </div>
+            <div id="bottom-inning"></div>
+        </div>
+    </div>
+    <div id="count">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball" id="walk" style="visibility: hidden; position: absolute; left: 600;"></div>
+        <div class="strike"></div>
+        <div class="strike"></div>
+        <div class="strike" id="strikeout" style="visibility: hidden; position: absolute; left: 600;"></div>
+    </div>
+    <ul id="pitch-selection">
+        <button id="fastball">FASTBALL</button>
+        <button id="splitter">SPLITTER</button>
+        <button id="slider">SLIDER</button>
+    </ul>
 </body>
 </html>

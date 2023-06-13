@@ -12,7 +12,7 @@ function prepPitch (event){
 */
 
 function throwPitch (event){
-    moveBall();
+    moveBall(event);
 }
 
 /*
@@ -25,7 +25,7 @@ function newBall() {
 }
 */
 
-function moveBall() {
+function moveBall(event) {
     var xposition = (event.clientX);
     var yposition = (event.clientY);
 
